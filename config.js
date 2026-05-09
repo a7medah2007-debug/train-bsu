@@ -75,7 +75,7 @@ export const TICKET_QUEUE = {
     // سرعة المشي (بالثواني للمتر) – تُضرب في 8 لتناسب عالمك
     walkSpeed: 0.10,     // يعادل 0.8 متر/ثانية فعلياً (مناسب)
     // موديل الشخص (نستخدم أحد المشاة)
-    model: 'assets/models/Man-walking.glb',
+    model: 'assets/models/passive_marker_man_walking.glb',
     // مدة توقف بسيطة عند الباب قبل متابعة المشي (للواقعية)
     doorPause: 0.6,
     // بعد ما يوصل لنقطة التجمع هل يختفي؟ (true) ولا يبقى واقفاً (false)

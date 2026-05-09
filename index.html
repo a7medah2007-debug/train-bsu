@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Station VR - Phase 1 (Babylon.js)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas الخاص بـ Babylon.js -->
+    <canvas id="renderCanvas" touch-action="none"></canvas>
+
+    <!-- شاشة التحميل -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <p class="loading-text">⏳ جاري التحميل...</p>
+    </div>
+    
+    <!-- زر VR -->
+    <button id="vr-button">🥽 ادخل عالم VR</button>
+
+    <!-- رسالة الموظف -->
+    <div id="employee-message" class="message employee-msg">🎫 عايز تذكرة لفين؟</div>
+
+    <!-- رسالة الكمسري -->
+    <div id="conductor-message" class="message conductor-msg">🎩 فين تذكرتك؟</div>
+
+    <!-- شاشة النهاية -->
+    <div id="end-screen">
+        <div class="end-content">
+            <p class="end-title">✨   لقد انتهت الرحله ✨</p>
+            <p class="end-subtitle"></p>
+        </div>
+    </div>
+<audio id="bg-music" loop preload="auto">
+  <source src="assets/sounds/background.mp3" type="audio/mpeg">
+</audio>
+ <!-- Babylon.js Libraries من CDN (مستقرة وسريعة) -->
+    <!-- استخدام Babylon.js 8.x الأحدث للأداء الأفضل على Quest 2 -->
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+    <script src="https://cdn.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+    <script src="https://cdn.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+
+    <!-- ملف JavaScript الرئيسي (module عشان نقدر نستخدم import/export) -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>

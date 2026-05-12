@@ -134,8 +134,7 @@ export const EVACUATION = {
     totalPeople: 20,
     peopleModels: [
         'assets/models/Man-walking.glb',
-        'assets/models/passive_marker_man_walking.glb',
-        'assets/models/man_sitting.glb'
+        'assets/models/passive_marker_man_walking.glb'
     ],
     speed: 0.12,
     personScale: 0.4,

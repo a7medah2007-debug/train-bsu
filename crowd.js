@@ -100,8 +100,7 @@ async function spawnWalkingPassengers() {
         const initDir    = isSecond ? 1 : -1;         // +Z أو -Z
         // direction 1  → +Z → rotation Math.PI
         // direction -1 → -Z → rotation 0
-        const initRotY   = initDir === 1 ? 0 : Math.PI;
-
+        const initRotY = initDir === 1 ? Math.PI : 0;
         const mesh = await spawnPerson(modelPath, walkerPathX, 0, startZ, initRotY, true, initDir);
         if (mesh) {
             trainInteriorAgents.push(mesh);
@@ -209,7 +208,7 @@ export function updateCrowd(delta) {
             walker.mesh.position.z = walker.limitMax;
             walker.direction = -1;
             // direction -1 → يمشي نحو -Z → يبص نحو -Z = rotation 0
-            walker.mesh.rotation.y = 0;
+            walker.mesh.rotation.y = Math.PI;
             if (walker.isReducedMode) {
                 const now = performance.now();
                 walker.nextAppearTime = now +
@@ -225,7 +224,7 @@ export function updateCrowd(delta) {
             walker.mesh.position.z = walker.limitMin;
             walker.direction = 1;
             // direction 1 → يمشي نحو +Z → يبص نحو +Z = rotation Math.PI
-            walker.mesh.rotation.y = Math.PI;
+            walker.mesh.rotation.y = 0;
             if (walker.isReducedMode) {
                 const now = performance.now();
                 walker.nextAppearTime = now +

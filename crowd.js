@@ -100,7 +100,7 @@ async function spawnWalkingPassengers() {
         const initDir    = isSecond ? 1 : -1;         // +Z أو -Z
         // direction 1  → +Z → rotation Math.PI
         // direction -1 → -Z → rotation 0
-        const initRotY   = initDir === 1 ? Math.PI : 0;
+        const initRotY   = initDir === 1 ? 0 : Math.PI;
 
         const mesh = await spawnPerson(modelPath, walkerPathX, 0, startZ, initRotY, true, initDir);
         if (mesh) {

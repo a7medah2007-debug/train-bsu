@@ -79,33 +79,6 @@ async function spawnSeatPassengers(models, baseX, baseZ, rotation, count) {
 }
 
 async function spawnWalkingPassengers() {
-    const models = CROWD.walkingModels;
-
-    // شخصان يمشيان في نفس المسار X بس بتبادل:
-    // الشخص 0 يبدأ من الطرف الأمامي ويمشي نحو -Z
-    // الشخص 1 يبدأ من الطرف الخلفي ويمشي نحو +Z
-    // الفرق في Z بينهم دايماً نص المسار → ميخبطوش أبداً
-
-    const halfRange = (walkLimitMax - walkLimitMin) / 2;
-
-    for (let i = 0; i < CROWD.walkerCount; i++) {
-        const modelPath = models[i % models.length];
-
-        // الشخص الأول: يبدأ عند limitMax ويمشي نحو -Z (rotation = 0)
-        // الشخص الثاني: يبدأ عند المنتصف ويمشي نحو +Z (rotation = Math.PI)
-        const isSecond   = (i % 2 === 1);
-        const startZ     = isSecond
-            ? walkLimitMin + halfRange * 0.5          // يبدأ من ربع المسار الخلفي
-            : walkLimitMax - halfRange * 0.5;         // يبدأ من ربع المسار الأمامي
-        const initDir    = isSecond ? 1 : -1;         // +Z أو -Z
-        // direction 1  → +Z → rotation Math.PI
-        // direction -1 → -Z → rotation 0
-        const initRotY = initDir === 1 ? 0 : Math.PI;
-        const mesh = await spawnPerson(modelPath, walkerPathX, 0, startZ, initRotY, true, initDir);
-        if (mesh) {
-            trainInteriorAgents.push(mesh);
-        }
-    }
 }
 
 /**

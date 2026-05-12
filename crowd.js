@@ -226,13 +226,13 @@ export function updateCrowd(delta) {
                 walker.mesh.position.z = walker.limitMin;
                 walker.direction = 1;
                 // direction 1 → يمشي نحو +Z → يبص نحو +Z = rotation Math.PI
-                walker.mesh.rotation.y = Math.PI;
+                walker.mesh.rotation.y = 0;
             }
         } else if (walker.mesh.position.z <= walker.limitMin) {
             walker.mesh.position.z = walker.limitMin;
             walker.direction = 1;
             // direction 1 → يمشي نحو +Z → يبص نحو +Z = rotation Math.PI
-            walker.mesh.rotation.y = 0;
+            walker.mesh.rotation.y = Math.PI;
             if (walker.isReducedMode) {
                 const now = performance.now();
                 walker.nextAppearTime = now +

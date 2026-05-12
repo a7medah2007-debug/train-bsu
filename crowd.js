@@ -116,7 +116,14 @@ async function spawnWalkingPassengers() {
  */
 async function spawnPerson(modelPath, x, y, z, rotY = 0, isWalker = false, initDir = null) {
     try {
-        const result = await getModel(modelPath);
+        const lastSlash = modelPath.lastIndexOf('/');
+const result = await BABYLON.SceneLoader.ImportMeshAsync(
+    '',
+    modelPath.substring(0, lastSlash + 1),
+    modelPath.substring(lastSlash + 1),
+    scene
+);
+result.rootMesh = result.meshes[0];
         const person = result.rootMesh;
         if (!person) {
             console.warn(`⚠️ مفيش root mesh: ${modelPath}`);

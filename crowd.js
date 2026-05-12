@@ -124,6 +124,7 @@ const result = await BABYLON.SceneLoader.ImportMeshAsync(
     scene
 );
 result.rootMesh = result.meshes[0];
+result.rootMesh.rotation.y += Math.PI;
         const person = result.rootMesh;
         if (!person) {
             console.warn(`⚠️ مفيش root mesh: ${modelPath}`);

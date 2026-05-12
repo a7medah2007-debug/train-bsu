@@ -236,8 +236,8 @@ export const EMPLOYEE_DISTANCE_THRESHOLD = 2.0;
 export const TICKET_PICKUP = { x: 4.408, y: 1.04, z: 5.68 };
 export const TICKET_PICKUP_DISTANCE = 0.64;
 export const TICKET_DELAY = 7000;
-export const ENGINE_DELAY = 15000;
-export const TRAIN_SOUND_DELAY = 25000;
+export const ENGINE_DELAY = 110000;
+export const TRAIN_SOUND_DELAY = 115000;
 
 // --- إعدادات الفيديو ---
 // 🎬 كل الفتحات (شبابيك + أبواب) - كل واحدة هتاخد plane مستقلة
